@@ -1,6 +1,6 @@
-import urllib, cStringIO
+from __future__ import division
 
-import math
+import urllib, cStringIO
 
 from skimage import io
 from skimage.transform import rescale, resize
@@ -12,8 +12,17 @@ from IPython.html.widgets import interactive
 # This function shows us our images so we can see what we're doing to them.
 def show(*images):
     fig, ax = plt.subplots(nrows=1, ncols=len(images), squeeze=False)
+
+    # assumes images are all the same size.
+    (image_height, image_width) = get_size(images[0])
+    aspect_ratio = image_width/image_height
+    fig_height = 5
+    fig_image_width = fig_height * aspect_ratio
+    fig_width = len(images) * fig_image_width
+
     for index, image in enumerate(images):
         ax[0][index].imshow(image, cmap=plt.cm.gray)
+    fig.set_size_inches(fig_width, fig_height)
     plt.show()
 
 # This function grabs the image from a url so we can change it.
