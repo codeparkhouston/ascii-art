@@ -6,10 +6,11 @@ from imageUtils import show, get_image_from_url, get_size, resize_image, convert
 from listUtils import join_list_items, add_to_list, reshape_list
 
 ASCII_A = [ '..', '%%', '@@', '??', 'SS', '++', '..', '**', '::', ',,', '..']
-ASCII_B = [ '##', '??', '%%', '..', 'SS', '++', '..', '**', '::', ',,', '@@']
+ASCII_B = [ '##', '??', '%%', '..', 'SS', '++', '..', '**', '::', '..', '  ']
 ASCII_C = [ '##', '??', '%%', '..', 'SS', '++', '..', '**', '::', ',,', '..']
 ASCII_D = ["$$","@@","BB","%%","88","&&","WW","MM","##","**","oo","aa","hh","kk","bb","dd","pp","qq","ww","mm","ZZ","OO","00","QQ","LL","CC","JJ","UU","YY","XX","zz","cc","vv","uu","nn","xx","rr","jj","ff","tt","//","\\","||","((","))","11","{{","}}","[[","]]","??","--","__","++","~~","<<",">>","ii","!!","ll","II",";;","::",",,",'""',"^^","``","''","..","  "]
-ASCII_E = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+# ASCII_E = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+ASCII_E = [ '##', 'vv', 'tt', "{{", '??', '++', '::', '~~', '**', '..', '  ']
 
 def get_ascii_for_pixel_value(pixel_value, ascii_chars):
     range_width = 256/(len(ascii_chars)-1)
