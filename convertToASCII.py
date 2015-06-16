@@ -15,7 +15,7 @@ ASCII_F = [ '##', '%%', '  ', '  ', '  ', '  ', '  ', '  ', '  ', '  ', '  ']
 
 def get_ascii_for_pixel_value(pixel_value, ascii_chars):
     range_width = 256/(len(ascii_chars)-1)
-    ascii_index = int(pixel_value/range_width)
+    ascii_index = int(round(pixel_value/range_width))
 
     return ascii_chars[ascii_index]
 

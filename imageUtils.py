@@ -47,9 +47,20 @@ def get_size(input_image):
     return input_image.shape[:2]
 
 def scaleto255(grayscale_value):
-    return int(grayscale_value*255)
+    return int(round(grayscale_value*255))
+
+def center_gray(image_values_list):
+    imagemax = max(image_values_list)
+    imagemin = min(image_values_list)
+
+    def _center_gray(grayscale_value):
+        return (grayscale_value - imagemin)/(imagemax - imagemin)
+
+    return _center_gray
 
 def get_image_values(gray_image):
     imagelist = gray_image.flatten()
+    center_gray_to_list = center_gray(imagelist)
+    imagelist = map(center_gray_to_list, imagelist)
     pixels_in_image = map(scaleto255, imagelist)
     return(pixels_in_image)
