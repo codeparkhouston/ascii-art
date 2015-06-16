@@ -1,5 +1,6 @@
 from __future__ import division
 from IPython.html.widgets import interactive
+from IPython.display import display
 
 from imageUtils import show, get_image_from_url, get_size, resize_image, convert_image_to_grayscale, get_image_values
 from listUtils import join_list_items, add_to_list, reshape_list
@@ -43,3 +44,6 @@ def make_to_ascii(image_url_path, ascii_chars, new_width=35):
     return ascii_art
 
 convert_image_to_ascii = interactive(make_to_ascii, image_url_path='http://png.clipart.me/previews/a03/puppy-vector-8-39942.jpg', ascii_chars = {'a': ASCII_A, 'b': ASCII_B, 'c': ASCII_C, 'd': ASCII_D, 'e': ASCII_E}, new_width=[20, 50, 5])
+
+def interactive_ascii():
+    display(convert_image_to_ascii)
