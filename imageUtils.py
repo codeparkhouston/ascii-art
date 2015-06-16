@@ -16,19 +16,6 @@ def show(*images):
         ax[0][index].imshow(image, cmap=plt.cm.gray)
     plt.show()
 
-
-def show_images(images):
-    num_images = len(images)
-    fig, axes = plt.subplots(ncols=num_images)
-    plt.figure(figsize=(3,9))
-    plt.gray()
-
-    for i in range(num_images):
-        axes[i].imshow(images[i])
-        axes[i].axis('off')
-    
-    plt.show()
-
 # This function grabs the image from a url so we can change it.
 def get_image_from_url(image_url_path):
     image = io.imread(image_url_path)
