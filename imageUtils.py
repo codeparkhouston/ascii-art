@@ -1,5 +1,6 @@
 from __future__ import division
 
+from PIL import Image
 import urllib, cStringIO
 
 from skimage import io
