@@ -8,7 +8,7 @@ from skimage.transform import rescale, resize
 from skimage.color import rgb2gray
 import matplotlib.pyplot as plt
 
-from IPython.html.widgets import interactive
+from ipywidgets.widgets import interactive
 
 # This function shows us our images so we can see what we're doing to them.
 def show(*images):
@@ -24,7 +24,9 @@ def show(*images):
     for index, image in enumerate(images):
         ax[0][index].imshow(image, cmap=plt.cm.gray)
     fig.set_size_inches(fig_width, fig_height)
-    plt.show()
+    steps = plt.gcf()
+    plt.close()
+    return steps
 
 # This function grabs the image from a url so we can change it.
 def get_image_from_url(image_url_path):

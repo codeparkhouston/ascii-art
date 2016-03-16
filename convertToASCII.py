@@ -1,6 +1,7 @@
 from __future__ import division
-from IPython.html.widgets import interactive
+from ipywidgets.widgets import interactive
 from IPython.display import display
+from functools import partial
 
 from imageUtils import show, get_image_from_url, get_size, resize_image, convert_image_to_grayscale, get_image_values
 from listUtils import join_list_items, add_to_list, reshape_list
@@ -39,13 +40,21 @@ def make_to_ascii(image_url_path, ascii_chars, new_width=35):
     # Shape the ASCII list to make the final ASCII image.
     ascii_width = new_width * len(ascii_chars[0])
     ascii_art = reshape_list(pixels_to_chars, ascii_width)
+    steps = show(image, small_image, gray_image)
 
-    show(image, small_image, gray_image)
+    global save_to_files
+    save_to_files = partial(file_saver, steps, ascii_art)
+
     print(ascii_art)
-
-    return ascii_art
+    return steps
 
 convert_image_to_ascii = interactive(make_to_ascii, image_url_path='http://png.clipart.me/previews/a03/puppy-vector-8-39942.jpg', ascii_chars = {'a': ASCII_A, 'b': ASCII_B, 'c': ASCII_C, 'd': ASCII_D, 'e': ASCII_E}, new_width=[20, 50, 5])
+
+def file_saver(plot, text,save_to_filename):
+    plot.savefig(save_to_filename + '.png')
+    ascii_text = open(save_to_filename + '.txt', 'w+')
+    ascii_text.write(text)
+    ascii_text.close()
 
 def interactive_ascii():
     display(convert_image_to_ascii)
