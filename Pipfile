@@ -8,6 +8,7 @@ jupyter = "*"
 scikit-image = "*"
 ipywidgets = "*"
 matplotlib = "*"
+pillow = "*"
 
 [dev-packages]
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2d82c3211545f36eb36ceb669d22efb4c7419d3c4033e3eb63aaf73b8086c594"
+            "sha256": "4363bb2cf3be4161e924d8f2b03c1df9fe19b561545cb0c2d6aa1286afe5fa23"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -355,6 +355,7 @@
                 "sha256:fdd374c02e8bb2d6468a85be50ea66e1c4ef9e809974c30d8576728473a6ed03",
                 "sha256:fe6931db24716a0845bd8c8915bd096b77c2a7043e6fc59ae9ca364fe816f08b"
             ],
+            "index": "pypi",
             "version": "==5.1.0"
         },
         "prompt-toolkit": {
@@ -370,7 +371,6 @@
                 "sha256:e64193f0047ad603b71f202332ab5527c5e52aa7c8b609704fc28c0dc20c4365",
                 "sha256:e8c43b5eee76b2083a9badde89fd1bbce6c8942d1045146e100b7b5e014f4f1a"
             ],
-            "markers": "os_name != 'nt'",
             "version": "==0.5.2"
         },
         "pygments": {
