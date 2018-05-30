@@ -1,7 +1,5 @@
-from __future__ import division
-
 from PIL import Image
-import urllib, cStringIO
+import urllib
 
 from skimage import io
 from skimage.transform import rescale, resize
@@ -64,5 +62,5 @@ def get_image_values(gray_image):
     imagelist = gray_image.flatten()
     center_gray_to_list = center_gray(imagelist)
     imagelist = map(center_gray_to_list, imagelist)
-    pixels_in_image = map(scaleto255, imagelist)
+    pixels_in_image = list(map(scaleto255, imagelist))
     return(pixels_in_image)

@@ -1,10 +1,9 @@
-from __future__ import division
 from ipywidgets.widgets import interactive
 from IPython.display import display
 from functools import partial
 
-from imageUtils import show, get_image_from_url, get_size, resize_image, convert_image_to_grayscale, get_image_values
-from listUtils import join_list_items, add_to_list, reshape_list
+from tools.image import show, get_image_from_url, get_size, resize_image, convert_image_to_grayscale, get_image_values
+from tools.list import join_list_items, add_to_list, reshape_list
 
 ASCII_A = [ '..', '%%', '@@', '??', 'SS', '++', '..', '**', '::', ',,', '..']
 ASCII_B = [ '##', '??', '%%', '..', 'SS', '++', '..', '**', '::', '..', '  ']
