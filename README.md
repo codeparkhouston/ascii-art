@@ -2,4 +2,4 @@
 
 Try it in Binder!
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/codeparkhouston/ascii-art/master?filepath=ASCII-ART.ipynb)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/codeparkhouston/ascii-art/master?filepath=ASCII-Art.ipynb)
