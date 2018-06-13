@@ -33,6 +33,7 @@ Look out for these things:
   - Guide should point out and refer the line numbers (In, Out) on the left margin
 - Getting image address from Google towards the end of class for custom ASCII art
   - Right click on image and select "Copy Image Address"
+  
   ![](./assets/image.gif)
 - Some image addresses don't load well
   - Help students find a similar image
