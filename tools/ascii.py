@@ -9,11 +9,9 @@ from tools.list import join_list_items, add_to_list, reshape_list
 
 ASCII_A = [ '..', '%%', '@@', '??', 'SS', '++', '..', '**', '::', ',,', '..']
 ASCII_B = [ '##', '??', '%%', '..', 'SS', '++', '..', '**', '::', '..', '  ']
-ASCII_C = [ '##', '??', '%%', '..', 'SS', '++', '..', '**', '::', ',,', '..']
+ASCII_C = [ '##', '%%', '@@', '??', '**', '++', '^^', '~~', '\'\'', '..', '  ']
 ASCII_D = ["$$","@@","BB","%%","88","&&","WW","MM","##","**","oo","aa","hh","kk","bb","dd","pp","qq","ww","mm","ZZ","OO","00","QQ","LL","CC","JJ","UU","YY","XX","zz","cc","vv","uu","nn","xx","rr","jj","ff","tt","//","\\","||","((","))","11","{{","}}","[[","]]","??","--","__","++","~~","<<",">>","ii","!!","ll","II",";;","::",",,",'""',"^^","``","''","..","  "]
-# ASCII_E = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
 ASCII_E = [ '##', 'vv', 'tt', "{{", '??', '++', '::', '~~', '**', '..', '  ']
-ASCII_F = [ '##', '%%', '  ', '  ', '  ', '  ', '  ', '  ', '  ', '  ', '  ']
 
 def get_ascii_for_pixel_value(pixel_value, ascii_chars):
     range_width = 256/(len(ascii_chars)-1)
@@ -49,7 +47,7 @@ def make_to_ascii(image_url_path, ascii_chars, new_width=35):
     print(ascii_art)
     return steps
 
-convert_image_to_ascii = interactive(make_to_ascii, image_url_path='http://png.clipart.me/previews/a03/puppy-vector-8-39942.jpg', ascii_chars = {'a': ASCII_A, 'b': ASCII_B, 'c': ASCII_C, 'd': ASCII_D, 'e': ASCII_E}, new_width=[20, 50, 5])
+convert_image_to_ascii = interactive(make_to_ascii, image_url_path='http://png.clipart.me/previews/a03/puppy-vector-8-39942.jpg', ascii_chars = {'a': ASCII_A, 'b': ASCII_B, 'c': ASCII_C, 'd': ASCII_D, 'e': ASCII_E}, new_width=50)
 
 def file_saver(plot, text, save_to_filename):
     plot.savefig(save_to_filename + '.png')

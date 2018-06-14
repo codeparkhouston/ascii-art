@@ -8,22 +8,16 @@ from PIL import ImageDraw
 
 
 def text2png(text, fullpath, color = "#000", bgcolor = "#FFF", fontfullpath = None, fontsize = 13, leftpadding = 3, rightpadding = 3, width = 200):
-  REPLACEMENT_CHARACTER = u'\uFFFD'
-  NEWLINE_REPLACEMENT_STRING = ' ' + REPLACEMENT_CHARACTER + ' '
   font = ImageFont.load_default() if fontfullpath == None else ImageFont.truetype(fontfullpath, fontsize)
 
   lines = []
   line = u""
 
-  for word in text.split():
-    if word == REPLACEMENT_CHARACTER: #give a blank line
-      lines.append( line[1:] ) #slice the white space in the begining of the line
-      line = u""
-      lines.append( u"" ) #the blank line
-    elif font.getsize( line + ' ' + word )[0] <= (width - rightpadding - leftpadding):
+  for word in text.split('\n'):
+    if font.getsize( line + ' ' + word )[0] <= (width - rightpadding - leftpadding):
       line += ' ' + word
     else: #start a new line
-      lines.append( line[1:] ) #slice the white space in the begining of the line
+      lines.append( line ) #slice the white space in the begining of the line
       line = u""
 
       #TODO: handle too long words at this point
